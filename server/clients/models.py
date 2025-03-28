@@ -1,10 +1,26 @@
 
 class Client:
-    def __init__(self, id, name, email, phone):
+    def __init__(self, id, name, email,number, password, is_instructor):
         self.id = id
         self.name = name
         self.email = email
-        self.phone = phone
+        self.number = number
+        self.password = password
+        self.is_instructor = is_instructor
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 CLIENTS = [
     Client(1, 'Иван Иванов', 'ivan@mail.ru', '+79161234567'),
