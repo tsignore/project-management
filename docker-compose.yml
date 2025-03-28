@@ -1,0 +1,28 @@
+services:
+  backend:
+    build:
+      context: ./server
+    volumes:
+      - ./server/:/app
+    ports:
+      - "8000:8000"
+
+  frontend:
+    build:
+      context: ./client
+    volumes:
+      - ./client:/app
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+
+  dash:
+    build:
+      context: ./dash
+    volumes:
+      - ./dash:/app
+    ports:
+      - "8050:8050"
+    depends_on:
+      - backend
